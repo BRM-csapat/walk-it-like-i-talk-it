@@ -68,14 +68,15 @@
                 android:textColorHighlight="@color/cardview_dark_background" />
 
             <Button
+                android:id="@+id/bejelentkezesButton"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:id="@+id/bejelentkezesButton"
-                android:text="Bejelentkezés"
-                android:textSize="18sp"
                 android:layout_marginTop="30dp"
                 android:backgroundTint="@color/purple"
-                app:cornerRadius = "20dp"/>
+                android:onClick="loginUser"
+                android:text="Bejelentkezés"
+                android:textSize="18sp"
+                app:cornerRadius="20dp" />
 
 
         </LinearLayout>
