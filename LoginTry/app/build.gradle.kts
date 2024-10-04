@@ -34,11 +34,17 @@ android {
 }
 
 dependencies {
+    implementation("androidx.annotation:annotation:1.1.0")
     // UI & App Compat Libraries
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.activity)
     implementation(libs.constraintlayout)
+
+    // Egyéb függőségek
+    implementation("androidx.appcompat:appcompat:1.6.1")
+    implementation("com.google.android.material:material:1.9.0")
+    implementation("com.android.support:appcompat-v7:28.0.0")
 
     // Firebase SDKs
     implementation(platform("com.google.firebase:firebase-bom:33.3.0")) // Firebase BoM (Bill of Materials) ensures using compatible versions

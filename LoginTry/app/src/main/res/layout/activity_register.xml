@@ -50,7 +50,7 @@
                 android:drawablePadding="8dp"
                 android:hint="Írja be a felhasználónevet"
                 android:padding="8dp"
-                android:textColor="@color/white"
+                android:textColor="@color/purple"
                 android:textColorHighlight="@color/cardview_dark_background" />
 
             <EditText
@@ -64,7 +64,7 @@
                 android:hint="Írja be a jelszót"
                 android:inputType="textPassword"
                 android:padding="8dp"
-                android:textColor="@color/white"
+                android:textColor="@color/purple"
                 android:textColorHighlight="@color/cardview_dark_background" />
 
             <EditText
@@ -78,7 +78,7 @@
                 android:hint="Írja be ujra a jelszót"
                 android:inputType="textPassword"
                 android:padding="8dp"
-                android:textColor="@color/white"
+                android:textColor="@color/purple"
                 android:textColorHighlight="@color/cardview_dark_background" />
 
             <Button

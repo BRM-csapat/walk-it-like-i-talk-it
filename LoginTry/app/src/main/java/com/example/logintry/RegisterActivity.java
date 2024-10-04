@@ -14,6 +14,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -23,12 +24,13 @@ import com.google.firebase.database.ValueEventListener;
 import org.checkerframework.checker.nullness.qual.NonNull;
 
 public class RegisterActivity extends AppCompatActivity {
-    private EditText felhaszNevEditText, jelszoEditText, jelszoUjraEditText;
-    private Button regisztracioButton;
-    private DatabaseReference databaseUsers;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        FirebaseApp.initializeApp(this);
+        EdgeToEdge.enable(this);
+        setContentView(R.layout.activity_register);
 
         // Firebase adatbázis referencia
         databaseUsers = FirebaseDatabase.getInstance().getReference("users");
@@ -54,15 +56,16 @@ public class RegisterActivity extends AppCompatActivity {
                 }
             }
         });
-
-        EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_register);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
     }
+    private EditText felhaszNevEditText, jelszoEditText, jelszoUjraEditText;
+    private Button regisztracioButton;
+    private DatabaseReference databaseUsers;
+
     private void checkIfUserExists(String felhaszNev, String jelszo) {
         databaseUsers.child(felhaszNev).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
